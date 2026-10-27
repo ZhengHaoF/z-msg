@@ -1,22 +1,16 @@
 {
-  "name": "z-msg-server",
+  "name": "z-msg",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "端到端加密聊天：Vue 3 前端 + Express/WebSocket 服务端",
   "scripts": {
-    "run": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "npm --prefix server install && npm --prefix web install",
+    "dev": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "start": "node server/app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1",
-    "nodejs-websocket": "^1.7.2"
+  "engines": {
+    "node": ">=16"
   },
-  "devDependencies": {
-    "@types/node": "^18.7.20",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.3"
-  }
+  "license": "ISC"
 }

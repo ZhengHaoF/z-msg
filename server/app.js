@@ -1,13 +1,14 @@
 // 导入express模块
 var express = require('express')
+var path = require('path')
 // 创建一个express实例
 var app = express();
 
 // 导入nodejs-websocket模块
 const ws = require('nodejs-websocket')
 
-//  设定使用的静态资源路径
-app.use('/', express.static('pages'))
+//  设定使用的静态资源路径（前端构建产物）
+app.use('/', express.static(path.join(__dirname, '../web/dist')))
 
 // // 执行app的get请求处理 ，处理访问根目录下的请求
 // app.get('/', function (req, res) {
@@ -54,10 +55,10 @@ let wsServer = ws.createServer(connection => {
     connection.on("error", () => {
         console.log('服务异常关闭...')
     })
-}).listen(3001)
+}).listen(process.env.WS_PORT || 3001)
 
 // 创建web服务，设定端口号和ip地址
-var server = app.listen(8081, function () {
+var server = app.listen(process.env.PORT || 8081, function () {
     var host = server.address()['address']
     var port = server.address()['port']
     console.log("应用实例，访问地址为 http://%s:%s", host, port)
