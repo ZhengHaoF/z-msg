@@ -1,27 +1,25 @@
 {
-  "name": "time-plan",
+  "name": "@z-msg/web",
+  "version": "2.0.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
-    "@ant-design/icons-vue": "^6.1.0",
-    "@vueuse/core": "^9.1.1",
-    "ant-design-vue": "^3.2.11",
-    "axios": "^0.27.2",
-    "dayjs": "^1.11.5",
-    "vue": "^3.2.37",
-    "vue-axios": "^3.4.1",
-    "vue-router": "^4.1.4",
-    "vuex": "^4.0.2"
+    "@noble/ciphers": "^1.2.0",
+    "@noble/hashes": "^1.7.0",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.3",
-    "crypto-js": "^4.1.1",
-    "vite": "3.2.7"
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^3.0.0",
+    "vue-tsc": "^2.2.0"
   }
 }
